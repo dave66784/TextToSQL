@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - /Users/saurabhdave/Developer/Softwares/PostgresLocal:/var/lib/postgresql/data/pgdata
+
+  db_vector:
+    image: ankane/pgvector
+    restart: always
+    environment:
+      POSTGRES_USER: vectoruser
+      POSTGRES_PASSWORD: vectorpass
+      POSTGRES_DB: vectordb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"  # Host port 5433 -> Container port 5432
+    volumes:
+      - /Users/saurabhdave/Developer/Softwares/PostgresVector:/var/lib/postgresql/data/pgdata

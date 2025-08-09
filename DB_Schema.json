@@ -1,0 +1,214 @@
+[
+  {
+    "table_schema": "public",
+    "table_name": "departments",
+    "columns": [
+      {
+        "column_name": "department_id",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "column_default": "nextval('departments_department_id_seq'::regclass)",
+        "description": "Unique identifier for the department"
+      },
+      {
+        "column_name": "name",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Name of the department"
+      },
+      {
+        "column_name": "location",
+        "data_type": "character varying",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Location of the department"
+      }
+    ]
+  },
+  {
+    "table_schema": "public",
+    "table_name": "employees",
+    "columns": [
+      {
+        "column_name": "employee_id",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "column_default": "nextval('employees_employee_id_seq'::regclass)",
+        "description": "Unique identifier for the employee"
+      },
+      {
+        "column_name": "first_name",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "First name of the employee"
+      },
+      {
+        "column_name": "last_name",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Last name of the employee"
+      },
+      {
+        "column_name": "email",
+        "data_type": "character varying",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Work email address of the employee"
+      },
+      {
+        "column_name": "phone_number",
+        "data_type": "character varying",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Phone number of the employee"
+      },
+      {
+        "column_name": "hire_date",
+        "data_type": "date",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Date the employee was hired"
+      },
+      {
+        "column_name": "job_title",
+        "data_type": "character varying",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Job title of the employee"
+      },
+      {
+        "column_name": "salary",
+        "data_type": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Salary of the employee"
+      },
+      {
+        "column_name": "department_id",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Identifier for the department the employee belongs to"
+      }
+    ]
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projectassignment",
+    "columns": [
+      {
+        "column_name": "employee_id",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Identifier for the assigned employee"
+      },
+      {
+        "column_name": "project_id",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Identifier for the assigned project"
+      },
+      {
+        "column_name": "assigned_date",
+        "data_type": "date",
+        "is_nullable": "YES",
+        "column_default": "CURRENT_DATE",
+        "description": "Date when the employee was assigned to the project"
+      },
+      {
+        "column_name": "role",
+        "data_type": "character varying",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Role of the employee in the project"
+      }
+    ]
+  },
+  {
+    "table_schema": "public",
+    "table_name": "projects",
+    "columns": [
+      {
+        "column_name": "project_id",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "column_default": "nextval('projects_project_id_seq'::regclass)",
+        "description": "Unique identifier for the project"
+      },
+      {
+        "column_name": "project_name",
+        "data_type": "character varying",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Name of the project"
+      },
+      {
+        "column_name": "start_date",
+        "data_type": "date",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Start date of the project"
+      },
+      {
+        "column_name": "end_date",
+        "data_type": "date",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "End date of the project"
+      },
+      {
+        "column_name": "budget",
+        "data_type": "numeric",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Budget allocated for the project"
+      }
+    ]
+  },
+  {
+    "table_schema": "public",
+    "table_name": "attendance",
+    "columns": [
+      {
+        "column_name": "attendance_id",
+        "data_type": "integer",
+        "is_nullable": "NO",
+        "column_default": "nextval('attendance_attendance_id_seq'::regclass)",
+        "description": "Unique identifier for the attendance record"
+      },
+      {
+        "column_name": "employee_id",
+        "data_type": "integer",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Identifier for the employee"
+      },
+      {
+        "column_name": "attendance_date",
+        "data_type": "date",
+        "is_nullable": "NO",
+        "column_default": null,
+        "description": "Date of the attendance record"
+      },
+      {
+        "column_name": "status",
+        "data_type": "character varying",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Attendance status (e.g., Present, Absent)"
+      },
+      {
+        "column_name": "remarks",
+        "data_type": "text",
+        "is_nullable": "YES",
+        "column_default": null,
+        "description": "Additional remarks for the attendance record"
+      }
+    ]
+  }
+]
